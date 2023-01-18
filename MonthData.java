@@ -1,5 +1,4 @@
-package sprint1;
-
+package StepTracker;
 import java.util.Scanner;
 
 public class MonthData {

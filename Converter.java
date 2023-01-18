@@ -1,4 +1,4 @@
-package sprint1;
+package StepTracker;
 public class Converter {
 
     public double convertToKm(int steps) {

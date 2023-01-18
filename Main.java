@@ -1,4 +1,4 @@
-package sprint1;
+package StepTracker;
 import java.util.Scanner;
 public class Main{
 
@@ -15,7 +15,7 @@ public class Main{
             if (command == 1) {
                 stepTracker.addNewNumberStepsPerDay();
             } else if (command == 2) {
-                ;
+                stepTracker.printStatistic();
             } else if (command == 3) {
                 stepTracker.changeStepGoal();
                 } else if (command == 4) {
