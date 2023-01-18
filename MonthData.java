@@ -1,4 +1,5 @@
 package StepTracker;
+
 import java.util.Scanner;
 
 public class MonthData {
@@ -7,12 +8,12 @@ public class MonthData {
     int[] days  = new int[30];
     String monthName;
     void inputStep(int step,int day){
-        days[day] = step;
+        days[day-1] = days[day-1]+step;
     }
 
     public void printDaysAndStepsFromMonth(int month) {
         for (int i = 0; i < 30; i++) {
-            System.out.println(i + " день: " + days[i]);
+            System.out.println(i+1 + " день: " + days[i]);
         }
     }
 

@@ -3,12 +3,12 @@ import java.util.Scanner;
 
 public class StepTracker{
     Converter converter = new Converter();
-    MonthData[] monthToData = new MonthData[12];
+    MonthData[] monthToData = new MonthData[13];
     Scanner scanner = new Scanner(System.in);
     int goalByStepsPerDay = 10000;
-    String[] monthName = {"январь", "февраль", "март", "апрель", "май", "июнь", "июль", "август", "сентябрь", "октябрь", "ноябрь", "декабрь"};      //Названия месяцев
+    String[] monthName = {"null","январь", "февраль", "март", "апрель", "май", "июнь", "июль", "август", "сентябрь", "октябрь", "ноябрь", "декабрь"};
     StepTracker(Scanner scanner) {
-        for (int i = 0; i < 12; i++) {
+        for (int i = 0; i < 13; i++) {
             monthToData[i] = new MonthData();
             monthToData[i].monthName = monthName[i];
         }
@@ -18,7 +18,9 @@ public class StepTracker{
         System.out.println("Введите новую цель по количеству шагов в день");
         int newSteps = scanner.nextInt();
         if (newSteps < 0) {
-            System.out.println("Значение не может быть отрицательным");
+            System.out.println("Значение не может быть отрицательным \n");
+        } else if (newSteps == 0){
+            System.out.println("Значение не может быть нулевым \n");
         } else {
             goalByStepsPerDay = newSteps;
             System.out.println("Ваша новая цель: " + goalByStepsPerDay + " шагов в день \n");
@@ -27,7 +29,7 @@ public class StepTracker{
     }
 
     public void addNewNumberStepsPerDay() {
-        System.out.println("Введите номер месяца. (от 1 до 12)");
+        System.out.println("Введите номер месяца. (от 1 ("+ monthName[1] + ") до 12 ("+ monthName[12]+")");
         int month = scanner.nextInt();
         if (month < 1 || month > 12) {
             System.out.println("Ошибка. Начните заново.");
@@ -43,11 +45,11 @@ public class StepTracker{
         System.out.println("Введите количество шагов (Больше нуля).");
         int steps = scanner.nextInt();
         if (steps <= 0) {
-            System.out.println("Ошибка. Начните заново.");
+            System.out.println("Ошибка. Начните заново.\n");
             return;
         }
         if (steps>=goalByStepsPerDay){
-            System.out.println("Вы достигли цели шагов на день! Так держать!");
+            System.out.println("Вы достигли цели шагов на день! Так держать!\n");
         }
         monthToData[month].days[day-1]=steps;
     }

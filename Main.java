@@ -6,7 +6,7 @@ public class Main{
 
         Scanner scanner = new Scanner(System.in);
         StepTracker stepTracker = new StepTracker(scanner);
-        System.out.println("Привет! Начнем использовать счёткик шагов!");
+        System.out.println("Привет! Начнем использовать счёткик шагов!\n");
 
         while(true) {
             printMenu(scanner,stepTracker);
