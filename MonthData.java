@@ -27,7 +27,7 @@ public class MonthData {
 
     public int maxSteps(int month) {
         int maxSteps = 0;
-        for (int i = 1; i < 30; i++) {
+        for (int i = 0; i < 30; i++) {
             if (days[i] > maxSteps) {
                 maxSteps = days[i];
             }
